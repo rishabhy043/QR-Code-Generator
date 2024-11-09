@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/de35d3e9bd.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        .main{
+              border: 2px solid rgb(0, 0, 0);
+              border-radius: 10px;
+              width: 15vw;
+              height: 50vh;
+              background-color: white;
+              box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            object-position: center;
+            
+        }
+        .like{
+            font-size: 80px;
+            color: rgb(0, 0, 0);
+            position: absolute;
+            transform: translate(100% , -250%);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtf4kDe5pv-naEFCtDbpFy2uNzeJ2bLZg-Uw&s" alt="">
+        <div class="like"><i class="fa-solid fa-heart"></i></div>
+    </div>
+    <script>
+        const like = document.querySelector(".like "); // Selecting the <i> element inside .like
+        
+        // Event listener for double click
+        document.querySelector(".main").addEventListener("dblclick", function(e) {
+            like.style.opacity = "1"; // Make the heart visible
+            setTimeout(function() {
+                like.style.opacity = "0"; // Fade out the heart after 1 second
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>

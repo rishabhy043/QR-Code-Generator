@@ -1,5 +1,3 @@
-
-
 const qrText = document.getElementById('qr-text');
 const sizes = document.getElementById('sizes');
 const generateBtn = document.getElementById('generateBtn');
@@ -21,9 +19,6 @@ downloadBtn.addEventListener('click', ()=>{
         downloadBtn.setAttribute("href", imgAtrr);
     }
     else{
-        //canvas passes a blank HTML Rectangle
-
-
         downloadBtn.setAttribute("href", `${document.querySelector('canvas').toDataURL()}`);
     }
 });
@@ -34,9 +29,6 @@ function isEmptyInput(){
     // else{
     //     alert("Enter the text or URL to generate your QR code");
     // }
-
-            // qrtext k value ki length 0 s greater h toh gqr run kara do wrna alert
-
     qrText.value.length > 0 ? generateQRCode() : alert("Enter the text or URL to generate your QR code");;
 }
 function generateQRCode(){
